@@ -1,8 +1,14 @@
 {
   "posts": [
-    { "id": 1, "title": "Post 1" },
-    { "id": 2, "title": "Post 2" },
-    { "id": 3, "title": "Post 3" }
+    { "id": 1, "title": "Post 1","page": 1 },
+    { "id": 2, "title": "Post 2","page": 1 },
+    { "id": 3, "title": "Post 3","page": 1 },
+    { "id": 4, "title": "Post 12","page": 2 },
+    { "id": 5, "title": "Post 22","page": 2 },
+    { "id": 6, "title": "Post 32","page": 2 },
+    { "id": 7, "title": "Post 13","page": 3 },
+    { "id": 8, "title": "Post 23","page": 3 },
+    { "id": 9, "title": "Post 33","page": 3 }
   ],
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 },
@@ -10,5 +16,6 @@
   ],
   "possibility": {
     "message": "mmes hjbhg gjhg rrf"
-  }
+  },
+  "pages": 3
 }
