@@ -1,0 +1,33 @@
+val client = OkHttpClient()
+
+val request: Request = Request.Builder()
+                    .tag(reqTag)
+                    .url("https://raw.githubusercontent.com/B0yma/JsonServer/master/NoiseV2.vc")
+                    .build()
+
+                client.newCall(request).enqueue(object : Callback {
+                    override fun onFailure(call: Call, e: IOException) {
+                        runOnUiThread {
+                            Toast.makeText(
+                                this@AlarmSettingsActivity,
+                                R.string.internet_error,
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                    }
+
+                    override fun onResponse(call: Call, response: Response) {
+                        runOnUiThread {
+                            if (response.code() == 200) {
+                                tryToApply()
+                            } else {
+                                //404
+                                showUpdateDialog()
+                            }
+                        }
+                    }
+                }
+                
+                
+                implementation 'com.squareup.okhttp3:okhttp:3.12.2'
